@@ -10,4 +10,4 @@ The data source is available at [`github.com/ddm999/gt7info`](https://ddm999.git
 
 
 
-©`=dateformat(date(today), "yyyy")` Jeremy Erik Leong. This hobbyist project was developed using [`Next.js`](https://nextjs.org/), [`TypeScript`](https://www.typescriptlang.org/), [`Tailwind CSS`](https://tailwindcss.com/) and deployed via [`Netlify`](https://www.netlify.com/).
+©2026-present Jeremy Erik Leong. This hobbyist project was developed using [`Next.js`](https://nextjs.org/), [`TypeScript`](https://www.typescriptlang.org/), [`Tailwind CSS`](https://tailwindcss.com/) and deployed via [`Netlify`](https://www.netlify.com/).
