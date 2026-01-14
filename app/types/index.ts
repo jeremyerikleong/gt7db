@@ -5,6 +5,7 @@ export interface CarProps {
     region: string;
     state: string;
     manufacturer: string;
+    estimatedays: number;
 }
 
 export interface CarCardProps {
@@ -13,6 +14,7 @@ export interface CarCardProps {
     carManufacturer: string;
     carState: string;
     carPrice: string;
+    estimateDays: number;
     onClick?: () => void;
 }
 
