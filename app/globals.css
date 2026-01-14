@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #777;
 }
 
 @theme inline {
@@ -23,4 +24,26 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .container-layout {
+    @apply max-w-5xl mx-auto px-5 py-4;
+  }
+
+  .logo {
+    @apply text-lg uppercase font-black;
+  }
+
+  .link {
+    @apply outline-none text-[var(--primary-color)];
+  }
+
+  .nav-link {
+    @apply capitalize;
+  }
+
+  .footer-text {
+    @apply text-sm;
+  }
 }
