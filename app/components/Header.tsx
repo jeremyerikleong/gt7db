@@ -14,8 +14,7 @@ export default function Header() {
             </div>
 
             <ul className="flex gap-6">
-                <li>switcher</li>
-                <li className="nav-link">wishlist</li>
+
             </ul>
         </nav>
     )
