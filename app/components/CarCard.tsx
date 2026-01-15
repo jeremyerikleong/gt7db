@@ -1,9 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import { CarCardProps } from '../types';
 import { BsExclamationTriangle } from 'react-icons/bs';
 
-export default function CarCard({ regionFlag, carName, carManufacturer, carPrice, carState, estimateDays, onClick }: CarCardProps) {
 
+export default function CarCard({ regionFlag, carName, carManufacturer, carPrice, carState, estimateDays }: CarCardProps) {
     function carAvailabilityTextDisplay(estimateDays: number): string {
         if (estimateDays > 1) {
             return `available for ${estimateDays} more days`
@@ -16,11 +18,20 @@ export default function CarCard({ regionFlag, carName, carManufacturer, carPrice
         return 'not available'
     }
 
+    function handleClick() {
+        const query = encodeURIComponent(`${carName} site:gran-turismo.fandom.com`);
+        window.open(
+            `https://www.google.com/search?tbm=isch&q=${query}`,
+            '_blank'
+        );
+    }
+
     return (
-        <li className={`flex flex-col justify-between gap-8 ${carState === 'soldout' ? 'bg-white/10 opacity-40' : 'bg-white/15'}  backdrop-blur-lg rounded-md shadow-lg border border-white/10 p-4 relative`} onClick={onClick}>
+        <li className={`flex flex-col justify-between gap-8 ${carState === 'soldout' ? 'bg-white/10 opacity-40' : 'bg-white/15'}  backdrop-blur-lg rounded-md shadow-lg border border-white/10 p-4 relative cursor-pointer`}
+            onClick={handleClick}>
             {carState === 'soldout' &&
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="flex items-center rotate-335 opacity-70 border-3 border-red-500 p-2">
+                    <div className="flex items-center -rotate-45 opacity-70 border-2 border-red-500 p-2">
                         <span className="text-2xl font-extrabold uppercase text-red-500">
                             Sold Out
                         </span>

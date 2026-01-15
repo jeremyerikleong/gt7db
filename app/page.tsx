@@ -3,7 +3,9 @@ import CarCard from './components/CarCard';
 import { UsedCarsProps } from './types';
 
 export default async function Home() {
-  const carData: { used: UsedCarsProps } = await getCars();
+  const carData: {
+    updatetimestamp: string | number | Date; used: UsedCarsProps
+  } = await getCars();
   const { cars } = carData.used;
 
   const formattedDate = new Date(carData.updatetimestamp).toLocaleDateString("en-US", {
@@ -25,7 +27,7 @@ export default async function Home() {
           {cars.map(car => (
             <CarCard
               key={car.carid}
-              regionFlag={`https://flagsapi.com/${car['region'].toUpperCase()}/flat/64.png`}
+              regionFlag={`https://flagsapi.com/${car.region.toUpperCase()}/flat/64.png`}
               carName={car.name}
               carManufacturer={car.manufacturer}
               carPrice={creditFormatter.format(car.credits)}
