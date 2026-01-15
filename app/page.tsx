@@ -33,6 +33,11 @@ export default async function Home() {
               carPrice={creditFormatter.format(car.credits)}
               carState={car.state}
               estimateDays={car.estimatedays}
+              isNew={car.new}
+              isRewardCar={car.rewardcar}
+              canEngineSwap={car.engineswap}
+              isLotteryCar={car.lotterycar}
+              isTrophyCar={car.trophycar}
             />
           ))}
         </ul>

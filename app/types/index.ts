@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface CarProps {
     carid: string;
     name: string;
@@ -6,6 +8,11 @@ export interface CarProps {
     state: 'available' | 'soldout' | 'limited';
     manufacturer: string;
     estimatedays: number;
+    new: boolean;
+    rewardcar: boolean;
+    engineswap: boolean;
+    lotterycar: boolean;
+    trophycar: boolean;
 }
 
 export interface CarCardProps {
@@ -15,9 +22,20 @@ export interface CarCardProps {
     carState: 'available' | 'soldout' | 'limited';
     carPrice: string;
     estimateDays: number;
+    isNew: boolean;
+    isRewardCar: boolean;
+    canEngineSwap: boolean;
+    isLotteryCar: boolean;
+    isTrophyCar: boolean;
     onClick?: () => void;
 }
 
 export interface UsedCarsProps {
     cars: CarProps[];
+}
+
+export type IndicatorProps = {
+    title: string
+    icon: ReactNode;
+    active: boolean;
 }
