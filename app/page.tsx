@@ -21,6 +21,10 @@ export default async function Home() {
       <main className="flex flex-col min-h-screen w-full container-layout py-8">
         <h5>Last updated on {formattedDate}</h5>
 
+        <h6 className="text-sm text-gray-500 italic">
+          ** Click the car name to view the car image in a new tab.
+        </h6>
+
         <ul className="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
           {cars.map(car => (
             <CarCard

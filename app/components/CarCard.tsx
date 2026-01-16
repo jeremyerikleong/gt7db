@@ -54,8 +54,7 @@ export default function CarCard({ regionFlag, carName, carManufacturer, carPrice
     }
 
     return (
-        <li className={`flex flex-col justify-between gap-8 ${carState === 'soldout' ? 'bg-white/10 opacity-40' : 'bg-white/15'}  backdrop-blur-lg rounded-md shadow-lg border border-white/10 p-3 sm:p-4 relative cursor-pointer`}
-            onClick={handleClick}>
+        <li className={`flex flex-col justify-between gap-8 ${carState === 'soldout' ? 'bg-white/10 opacity-40' : 'bg-white/15'}  backdrop-blur-lg rounded-md shadow-lg border border-white/10 p-3 sm:p-4 relative`}>
             {carState === 'soldout' &&
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="flex items-center -rotate-25 opacity-70 border-2 border-red-500 p-2">
@@ -78,7 +77,11 @@ export default function CarCard({ regionFlag, carName, carManufacturer, carPrice
                         <h3 className="font-medium text-sm uppercase">{carManufacturer}</h3>
                     </div>
 
-                    <h2 className="font-bold mt-1">{carName}</h2>
+                    <h2
+                        className="font-bold mt-1 cursor-pointer"
+                        onClick={handleClick}>
+                        {carName}
+                    </h2>
                 </div>
 
                 {isNew && <div><h4 className="border border-amber-400 p-1 text-amber-400 text-xs rounded">New</h4></div>}
