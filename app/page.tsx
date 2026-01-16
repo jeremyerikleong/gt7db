@@ -1,6 +1,8 @@
 import { getCars } from '@/app/lib/getCars';
 import CarCard from './components/CarCard';
 import { UsedCarsProps } from './types';
+import { indicatorDefinition } from './constants';
+import IndicatorDefinition from './components/IndicatorDefinition';
 
 export default async function Home() {
   const carData: {
@@ -43,6 +45,18 @@ export default async function Home() {
             />
           ))}
         </ul>
+
+        <div className="my-4">
+          <h2 className="font-bold text-lg mb-4">Indicator Definitions</h2>
+
+          {indicatorDefinition.map(indicator => (
+            <IndicatorDefinition
+              key={indicator.id}
+              title={indicator.title}
+              explanation={indicator.explanation}
+            />
+          ))}
+        </div>
       </main>
     </div>
   );

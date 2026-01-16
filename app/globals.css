@@ -28,7 +28,7 @@ body {
 
 @layer components {
   .container-layout {
-    @apply max-w-5xl mx-auto px-3 md:px-5 py-4;
+    @apply max-w-5xl mx-auto px-4 md:px-5 py-4;
   }
 
   .logo {

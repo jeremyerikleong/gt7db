@@ -39,3 +39,8 @@ export type IndicatorProps = {
     icon: ReactNode;
     active: boolean;
 }
+
+export type IndicatorDefinitionProps = {
+    title: string;
+    explanation: string;
+}
