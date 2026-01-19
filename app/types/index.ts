@@ -16,6 +16,7 @@ export interface CarProps {
 }
 
 export interface CarCardProps {
+    carId: string;
     regionFlag: string;
     carName: string;
     carManufacturer: string;

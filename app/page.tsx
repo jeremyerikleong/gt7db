@@ -31,6 +31,7 @@ export default async function Home() {
           {cars.map(car => (
             <CarCard
               key={car.carid}
+              carId={car.carid}
               regionFlag={`https://flagsapi.com/${car.region.toUpperCase()}/flat/64.png`}
               carName={car.name}
               carManufacturer={car.manufacturer}
