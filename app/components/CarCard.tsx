@@ -136,7 +136,7 @@ export default function CarCard({ carId, regionFlag, carName, carManufacturer, c
             <div>
                 <hr className="opacity-25" />
 
-                <div className="flex items-center gap-4 mt-3 min-h-5">
+                <ul className="flex items-center gap-4 mt-3 min-h-5">
                     {indicators.map(({ title, icon: Icon, active }) => (
                         <Indicator
                             key={title}
@@ -150,7 +150,7 @@ export default function CarCard({ carId, regionFlag, carName, carManufacturer, c
                             }
                         />
                     ))}
-                </div>
+                </ul>
             </div>
         </li>
     )
