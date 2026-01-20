@@ -91,12 +91,12 @@ export default function CarCard({ carId, regionFlag, carName, carManufacturer, c
             </div>
 
             {carData && (
-                <div className="flex items-center justify-between gap-4 text-md text-gray-300">
+                <div className="flex items-center justify-between gap-4 text-sm text-gray-300">
                     <span className="border py-1 px-3 rounded-full">
-                        <strong>PP</strong> {carData.pp}
+                        <strong>PP </strong> {carData.pp}
                     </span>
                     <h4 className="font-bold">
-                        {carData.drivetrain}
+                        {carData.drivetrain} / {carData.aspiration}
                     </h4>
                 </div>
             )}
