@@ -1,9 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    domains: ['flagsapi.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagsapi.com',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
