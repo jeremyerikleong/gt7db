@@ -47,6 +47,10 @@ body {
     }
   }
 
+  .section-title {
+    @apply font-bold text-lg my-4 uppercase;
+  }
+
   .footer-text {
     @apply text-sm;
   }

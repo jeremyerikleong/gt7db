@@ -3,6 +3,7 @@ import CarCard from './components/CarCard';
 import { UsedCarsProps } from './types';
 import { indicatorDefinition } from './constants';
 import IndicatorDefinition from './components/IndicatorDefinition';
+import SectionTitle from './components/SectionTitle';
 
 export default async function Home() {
   const carData: {
@@ -21,6 +22,7 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-col min-h-screen w-full container-layout py-8">
+        <SectionTitle logo='/auto-logo.png' title='Used car dealership' />
         <h5>Last updated on {formattedDate}</h5>
 
         <ul className="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">

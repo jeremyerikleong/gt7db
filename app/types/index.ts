@@ -50,3 +50,8 @@ export type NavLinkProps = {
     href: string;
     label: string;
 }
+
+export type SectionTitleProps = {
+    logo: string;
+    title: string;
+}
