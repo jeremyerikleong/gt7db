@@ -4,6 +4,12 @@ import { UsedCarsProps } from './types';
 import { indicatorDefinition } from './constants';
 import IndicatorDefinition from './components/IndicatorDefinition';
 import SectionTitle from './components/SectionTitle';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'GT7 used car list | GT7DB',
+  description: 'This is a fan-made, non-commercial project created for personal use to view the latest used cars available.',
+};
 
 export default async function Home() {
   const carData: {

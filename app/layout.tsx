@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GT7DB (GT7 used car list)",
+  title: "GT7DB",
   description: "This is a fan-made, non-commercial project created for personal use to view the latest used cars available.",
 };
 
