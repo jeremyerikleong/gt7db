@@ -55,3 +55,7 @@ export type SectionTitleProps = {
     logo: string;
     title: string;
 }
+
+export type FormattedDateProps = {
+    date: string | number | Date;
+}

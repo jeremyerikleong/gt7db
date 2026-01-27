@@ -5,6 +5,7 @@ import { indicatorDefinition } from './constants';
 import IndicatorDefinition from './components/IndicatorDefinition';
 import SectionTitle from './components/SectionTitle';
 import type { Metadata } from 'next';
+import formattedDate from './components/FormattedDate';
 
 export const metadata: Metadata = {
   title: 'GT7 used car list | GT7DB',
@@ -17,19 +18,13 @@ export default async function Home() {
   } = await getCars();
   const { cars } = carData.used;
 
-  const formattedDate = new Date(carData.updatetimestamp).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  });
-
   const creditFormatter = new Intl.NumberFormat('en-US');
 
   return (
     <div className="flex min-h-screen items-center justify-center font-sans bg-background">
       <main className="flex flex-col min-h-screen w-full container-layout py-8">
         <SectionTitle logo='/auto-logo.png' title='Used car dealership' />
-        <h5 className="text-sm mt-2 mb-4">Last updated on {formattedDate}</h5>
+        <h5 className="text-sm mt-2 mb-4">Last updated on {formattedDate({ date: carData.updatetimestamp })}</h5>
 
         <ul className="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
           {cars.map(car => (
