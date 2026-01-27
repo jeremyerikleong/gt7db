@@ -54,4 +54,16 @@ body {
   .footer-text {
     @apply text-sm;
   }
+
+  .legendary-card {
+    @apply relative min-h-64 p-4 text-white transition-all duration-300 ease-out bg-transparent hover:bg-white/10 hover:shadow-lg;
+  }
+
+  .legendary-card-divider {
+    @apply my-3 w-full h-px bg-transparent group-hover:bg-blue-400 transition-colors duration-200;
+  }
+
+  .btn-view {
+    @apply w-full border border-blue-400 text-blue-400 p-2 my-4 cursor-pointer transition-colors duration-300 ease-out hover:bg-blue-400 hover:text-white;
+  }
 }

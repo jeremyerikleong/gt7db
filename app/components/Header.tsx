@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import NavLink from './NavLink';
 
 export default function Header() {
@@ -18,6 +17,10 @@ export default function Header() {
             <ul className="flex gap-4">
                 <li>
                     <NavLink href="/" label="used cars" />
+                </li>
+
+                <li>
+                    <NavLink href="/legendary" label="legendary cars" />
                 </li>
             </ul>
         </nav>

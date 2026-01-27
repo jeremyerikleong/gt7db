@@ -46,6 +46,19 @@ export const indicatorDefinition = [
     },
 ]
 
+export const indicatorDefinitionForLegendaryCars = [
+    {
+        id: 'new',
+        title: 'new',
+        explanation: 'In Gran Turismo 7 (GT7), the "new in used car list" refers to recently added or rotated vehicles appearing daily in the Used Car Dealership (UCD), often older classics or specific models not in Brand Central, providing fresh opportunities to buy rare cars for credits or potentially find duplicates of Café reward cars, as the stock refreshes daily and varies by region.'
+    },
+    {
+        id: 'soldout',
+        title: 'sold out',
+        explanation: 'In Gran Turismo 7 (GT7), "Sold Out" indicates that the car\'s limited availability window has expired, and it has been removed from the Used Car Dealership (UCD) or Legend Cars dealership. You cannot purchase a "sold out" car at that specific time.'
+    },
+]
+
 export const carStats = [
     {
         "id": "3587",

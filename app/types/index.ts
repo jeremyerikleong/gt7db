@@ -59,3 +59,19 @@ export type SectionTitleProps = {
 export type FormattedDateProps = {
     date: string | number | Date;
 }
+
+export interface LegendaryCarsProps {
+    carid: string;
+    region: string;
+    name: string;
+    manufacturer: string;
+    state: 'normal' | 'soldout' | 'limited';
+    credits: number;
+    estimatedays: number;
+    new: boolean;
+    onClick?: () => void;
+}
+
+export interface LegendaryCarListProps {
+    cars: LegendaryCarsProps[];
+}
