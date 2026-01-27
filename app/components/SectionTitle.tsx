@@ -9,7 +9,7 @@ export default function SectionTitle({ logo, title }: SectionTitleProps) {
                 width={120}
                 height={80}
                 alt="logo"
-                className={`${title === 'Used car dealership' ? 'invert' : ''}`}
+                className="invert"
             />
 
             <span className="w-0.5 h-5 bg-white"></span>
