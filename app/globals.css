@@ -40,7 +40,11 @@ body {
   }
 
   .nav-link {
-    @apply capitalize;
+    @apply capitalize text-sm font-medium text-gray-500;
+
+    &.active {
+      @apply text-white;
+    }
   }
 
   .footer-text {

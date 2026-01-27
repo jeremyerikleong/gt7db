@@ -45,3 +45,8 @@ export type IndicatorDefinitionProps = {
     title: string;
     explanation: string;
 }
+
+export type NavLinkProps = {
+    href: string;
+    label: string;
+}
