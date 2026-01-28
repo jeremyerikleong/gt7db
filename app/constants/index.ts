@@ -5652,5 +5652,12 @@ export const carStats = [
         "pp": "533.39",
         "drivetrain": "FR",
         "aspiration": "TC"
+    },
+    {
+        "id": "779",
+        "model": "Cappuccino (EA11R) '91",
+        "pp": "304.76",
+        "drivetrain": "FR",
+        "aspiration": "TC"
     }
 ]
