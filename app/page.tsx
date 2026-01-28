@@ -21,8 +21,8 @@ export default async function Home() {
   const creditFormatter = new Intl.NumberFormat('en-US');
 
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans bg-background">
-      <main className="flex flex-col min-h-screen w-full container-layout py-8">
+    <div className="container-wrapper">
+      <main className="container-layout main-container-layout">
         <SectionTitle logo='/auto-logo.png' title='Used car dealership' />
         <h5 className="text-sm mt-2 mb-4">Last updated on {formattedDate({ date: carData.updatetimestamp })}</h5>
 

@@ -27,8 +27,16 @@ body {
 }
 
 @layer components {
+  .container-wrapper {
+    @apply flex min-h-screen items-center justify-center font-sans bg-background;
+  }
+
   .container-layout {
     @apply max-w-5xl mx-auto px-4 md:px-5 py-4 bg-background;
+  }
+
+  .main-container-layout {
+    @apply flex flex-col min-h-screen w-full py-8;
   }
 
   .logo {

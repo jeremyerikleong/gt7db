@@ -19,8 +19,8 @@ export default async function LegendaryPage() {
     const { cars } = carData.legend;
 
     return (
-        <div className="flex min-h-screen items-center justify-center flex-col font-sans bg-background">
-            <main className="flex flex-col min-h-screen w-full container-layout py-8">
+        <div className="container-wrapper">
+            <main className="container-layout main-container-layout">
                 <SectionTitle logo={'/hagerty-logo.png'} title='collections' />
                 <h5 className="text-sm mt-2 mb-4">Last updated on {formattedDate({ date: carData.updatetimestamp })}</h5>
 
@@ -40,19 +40,19 @@ export default async function LegendaryPage() {
                         </li>
                     ))}
                 </ul>
+
+                <div className="my-4">
+                    <h2 className="font-bold text-lg mb-4">Indicator Definitions</h2>
+
+                    {indicatorDefinitionForLegendaryCars.map(indicator => (
+                        <IndicatorDefinition
+                            key={indicator.id}
+                            title={indicator.title}
+                            explanation={indicator.explanation}
+                        />
+                    ))}
+                </div>
             </main>
-
-            <div className="my-4 container-layout">
-                <h2 className="font-bold text-lg mb-4">Indicator Definitions</h2>
-
-                {indicatorDefinitionForLegendaryCars.map(indicator => (
-                    <IndicatorDefinition
-                        key={indicator.id}
-                        title={indicator.title}
-                        explanation={indicator.explanation}
-                    />
-                ))}
-            </div>
         </div>
     )
 }
