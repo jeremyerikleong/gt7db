@@ -80,3 +80,8 @@ export type CarAvailabilityTextProps = {
     estimateDays: number
     className?: string
 }
+
+export type SoldOutOverlayProps = {
+    visible: boolean
+    label?: string
+}

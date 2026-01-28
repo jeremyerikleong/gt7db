@@ -3,6 +3,7 @@
 import { LegendaryCarsProps } from '../types';
 import Image from 'next/image';
 import CarAvailabilityText from './CarAvailabilityText';
+import SoldOutOverlay from './SoldOutOverlay';
 
 export default function LegendaryCarCard({ carid, region, name, manufacturer, state, credits, estimatedays, new: isNew }: LegendaryCarsProps) {
     const creditFormatter = new Intl.NumberFormat('en-US');
@@ -17,15 +18,7 @@ export default function LegendaryCarCard({ carid, region, name, manufacturer, st
 
     return (
         <div className={`legendary-card group ${state === 'soldout' ? 'bg-white/10 opacity-40' : ''} group`}>
-            {state === 'soldout' &&
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="flex items-center -rotate-25 opacity-70 border-2 border-red-500 p-2">
-                        <span className="text-2xl font-extrabold uppercase text-red-500">
-                            Sold Out
-                        </span>
-                    </div>
-                </div>
-            }
+            <SoldOutOverlay visible={state === 'soldout'} label={'sold out'} />
 
             <Image
                 src="/hagerty-stripe.png"

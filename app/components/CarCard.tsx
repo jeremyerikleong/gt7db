@@ -11,6 +11,7 @@ import { IoTicketOutline } from 'react-icons/io5';
 import { IoTrophyOutline } from 'react-icons/io5';
 import { PiMagnifyingGlassDuotone } from 'react-icons/pi';
 import CarAvailabilityText from './CarAvailabilityText';
+import SoldOutOverlay from './SoldOutOverlay';
 
 export default function CarCard({ carId, regionFlag, carName, carManufacturer, carPrice, carState, estimateDays, isNew, isRewardCar, canEngineSwap, isLotteryCar, isTrophyCar }: CarCardProps) {
     const ICON_MD = 16;
@@ -51,15 +52,7 @@ export default function CarCard({ carId, regionFlag, carName, carManufacturer, c
 
     return (
         <li className={`flex flex-col justify-between gap-4 ${carState === 'soldout' ? 'bg-white/10 opacity-40' : 'bg-white/15'}  backdrop-blur-lg rounded-md shadow-lg border border-white/10 p-3 sm:p-4 relative`}>
-            {carState === 'soldout' &&
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="flex items-center -rotate-25 opacity-70 border-2 border-red-500 p-2">
-                        <span className="text-2xl font-extrabold uppercase text-red-500">
-                            Sold Out
-                        </span>
-                    </div>
-                </div>
-            }
+            <SoldOutOverlay visible={carState === 'soldout'} label={'sold out'} />
 
             <div>
                 <div className="flex justify-between">
