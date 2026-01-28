@@ -75,3 +75,8 @@ export interface LegendaryCarsProps {
 export interface LegendaryCarListProps {
     cars: LegendaryCarsProps[];
 }
+
+export type CarAvailabilityTextProps = {
+    estimateDays: number
+    className?: string
+}

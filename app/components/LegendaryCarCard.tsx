@@ -2,6 +2,7 @@
 
 import { LegendaryCarsProps } from '../types';
 import Image from 'next/image';
+import CarAvailabilityText from './CarAvailabilityText';
 
 export default function LegendaryCarCard({ carid, region, name, manufacturer, state, credits, estimatedays, new: isNew }: LegendaryCarsProps) {
     const creditFormatter = new Intl.NumberFormat('en-US');
@@ -12,18 +13,6 @@ export default function LegendaryCarCard({ carid, region, name, manufacturer, st
             `https://www.google.com/search?tbm=isch&q=${query}`,
             '_blank'
         );
-    }
-
-    function carAvailabilityTextDisplay(estimatedays: number): string {
-        if (estimatedays > 1) {
-            return `available for ${estimatedays} more days`
-        }
-
-        if (estimatedays > 0 && estimatedays <= 1) {
-            return 'last day available'
-        }
-
-        return 'not available'
     }
 
     return (
@@ -76,9 +65,7 @@ export default function LegendaryCarCard({ carid, region, name, manufacturer, st
                     </>}
                 </div>
 
-                <h5 className={`text-xs text-gray-400 mt-1 capitalize ${estimatedays === 1 && 'animate-pulse'}`}>
-                    {carAvailabilityTextDisplay(estimatedays)}
-                </h5>
+                <CarAvailabilityText estimateDays={estimatedays} />
 
                 <button className="btn-view" onClick={viewCar}>
                     View Car

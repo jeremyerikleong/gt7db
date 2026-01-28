@@ -10,6 +10,7 @@ import { PiEngine } from 'react-icons/pi';
 import { IoTicketOutline } from 'react-icons/io5';
 import { IoTrophyOutline } from 'react-icons/io5';
 import { PiMagnifyingGlassDuotone } from 'react-icons/pi';
+import CarAvailabilityText from './CarAvailabilityText';
 
 export default function CarCard({ carId, regionFlag, carName, carManufacturer, carPrice, carState, estimateDays, isNew, isRewardCar, canEngineSwap, isLotteryCar, isTrophyCar }: CarCardProps) {
     const ICON_MD = 16;
@@ -37,18 +38,6 @@ export default function CarCard({ carId, regionFlag, carName, carManufacturer, c
             active: isTrophyCar,
         },
     ];
-
-    function carAvailabilityTextDisplay(estimateDays: number): string {
-        if (estimateDays > 1) {
-            return `available for ${estimateDays} more days`
-        }
-
-        if (estimateDays > 0 && estimateDays <= 1) {
-            return 'last day available'
-        }
-
-        return 'not available'
-    }
 
     function handleClick() {
         const query = encodeURIComponent(`${carName} site:gran-turismo.fandom.com`);
@@ -128,9 +117,7 @@ export default function CarCard({ carId, regionFlag, carName, carManufacturer, c
                     <span className="text-lg md:text-xl font-bold ml-2">{carPrice}</span>
                 </h3>
 
-                <h5 className={`text-xs text-gray-400 mt-1 capitalize ${estimateDays === 1 && 'animate-pulse'}`}>
-                    {carAvailabilityTextDisplay(estimateDays)}
-                </h5>
+                <CarAvailabilityText estimateDays={estimateDays} />
             </div>
 
             <div>
